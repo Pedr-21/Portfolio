@@ -400,16 +400,17 @@ nav {
 
 /* Photo side */
 .about-photo {
-  width: 340px;
+  width: 380px;
   flex-shrink: 0;
   position: relative;
 }
 
 .photo-frame {
   position: relative;
-  border-radius: 2px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
   overflow: hidden;
-  aspect-ratio: 3/4;
 }
 
 .photo-frame img {
@@ -450,16 +451,7 @@ nav {
   color: var(--muted);
 }
 
-.photo-deco {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 100%;
-  height: 100%;
-  border: 1.5px solid rgba(201,169,110,.3);
-  border-radius: 2px;
-  pointer-events: none;
-}
+
 
 /* ── Footer ────────────────────────────────────────────────── */
 footer {
@@ -520,4 +512,76 @@ footer span { color: var(--gold); }
 
 @media (max-width: 600px) {
   .nav-links { display: none; }
+}
+
+/* ── Skills ─────────────────────────────────────────────────── */
+#skills {
+  padding: 8rem 6%;
+  background: var(--cream2);
+}
+
+#skills h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2rem 1.6rem;
+  text-align: center;
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(27,42,74,.08);
+}
+
+.skill-icon {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-card p {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.skill-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .7rem;
+  
 }
